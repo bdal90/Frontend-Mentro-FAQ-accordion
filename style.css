@@ -1,0 +1,128 @@
+:root {
+    --card-background: hsl(0, 0%, 100%);
+    --bottom-bg-color: hsl(275, 100%, 97%);
+    --par-color: hsl(292, 16%, 49%);
+    --headings-color: hsl(292, 42%, 14%);
+}
+
+/*--------------------GENERAL------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--par-color);
+    background-color: var(--bottom-bg-color);
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+/*-----------------MOBILE FIRST SPECIFICATIONS-----------------*/
+
+.card {
+    max-width: 35rem;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    margin: 0 2rem;
+}
+
+.container {
+    padding: 1.7rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    color: var(--headings-color);
+}
+
+.header__heading {
+    margin-left: 2rem;
+}
+
+.logo {
+    max-width: 1.875rem;
+}
+
+.faq-items {
+    margin-top: 1rem;
+}
+
+.question-plus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1.2rem  0;
+    cursor: pointer;
+}
+
+.question-plus--last {
+    padding-bottom: 0;
+}
+
+.question-plus .question:hover {
+    color: hsl( 281, 83%, 54% );
+    transition: 0.5s;
+}
+
+.question  {
+    color: var(--headings-color);
+    font-weight: 700;
+    padding-right: 3rem;
+}
+
+.minus-icon {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+.answer {
+    padding-bottom: 1.2rem;
+    display: none;
+}
+
+.faq-item +.faq-item {
+    border-top: .5px solid hsl(292, 16%, 49%, 0.3);
+}
+
+footer {
+    margin-top: 1rem;
+}
+
+/*------------------------TOGGLE-------------------------*/
+
+.faq-item.active .minus-icon {
+    display: block;
+}
+
+.faq-item.active .answer {
+    display: block;
+}
+
+/*----------------------MEDIA QUERIES------------------------*/
+
+@media (min-width: 375px) {
+    body {
+        background-image: url(assets/images/background-pattern-desktop.svg);
+        background-size: contain;
+        background-position: 0 -3rem;
+    }
